@@ -1,0 +1,27 @@
+{% load static %}
+<html>
+    <head>
+        <title>Takuma's blog</title>
+        <!--BootstrapというHTMLとCSSのフレームワークを導入するため以下2行追加-->
+        <!--上から書いた順番でファイルを読み込みため、linkの順番に注意-->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+<body>
+    <!--divにはクラス名をつけることが可能(これにより分類することが出来る)-->
+    <div class="page-header">
+        <h1><a href="/">Takuma's Blog</a></h1>
+    </div>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+                <!--block content内の実装に関してはpost_list.html-->
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
